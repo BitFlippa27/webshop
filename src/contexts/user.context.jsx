@@ -11,16 +11,15 @@ export const UserProvider = ({ children }) => {
   const value = { currentUser, setCurrentUser };
   
   //logOutUser();
-
+  //listens for changes when the app mounts and after when an auth event happens
   useEffect(() => {
    const unsubscribe = onAuthStateChangedListener((user) => {
     if(user) {
-      createUserDocumentFromAuth(user);
+      createUserDocumentFromAuth(user); //create database entry if we get a user back
     }
     console.log(user)
     setCurrentUser(user);
    })
-   
 
    return unsubscribe;
   }, [])
