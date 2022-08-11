@@ -3,7 +3,7 @@ import { Fragment, useContext } from "react";
 import { ReactComponent as Logo } from "../../assets/logo.svg"
 import { logOutUser } from "../../utils/firebase/firebase.utils.js";
 import { UserContext } from "../../contexts/user.context";
-import { CartContext } from "../../contexts/cart.contex";
+import { CartContext } from "../../contexts/cart.context";
 import CartIcon from "../../components/cart-icon/cart-icon.components";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 
