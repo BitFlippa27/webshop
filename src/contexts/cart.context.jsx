@@ -1,11 +1,11 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 
 const addCartItem = (cartItems, productToAdd) => {
   const existigCartItem = cartItems.find(item => item.id === productToAdd.id);
 
   if(existigCartItem) {
     return cartItems.map(item => item.id === productToAdd.id ? 
-      {...item, quantity: item.quantity++} : item)
+      {...item, quantity: item.quantity = item.quantity + 1} : item)
   }
 
   return [...cartItems, {...productToAdd, quantity:1}] // case for new Item
@@ -15,18 +15,25 @@ export const CartContext = createContext({
   isCartOpen: false,
   setIsCartOpen: () => {},
   cartItems: [], 
-  addItemToCart: () => {}
+  addItemToCart: () => {},
+  cartCount: 0
 });
 
 export const CartProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+  const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    const newCartCount = cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0);
+    setCartCount(newCartCount);
+  }, [cartItems])
 
   const addItemToCart = (productToAdd) => {
     setCartItems(addCartItem(cartItems, productToAdd));
   }
 
-  const value = { isCartOpen, setIsCartOpen, addItemToCart, cartItems };
+  const value = { isCartOpen, setIsCartOpen, addItemToCart, cartItems, cartCount };
 
   
 
