@@ -1,4 +1,4 @@
-import { Fragment, useContext } from "react";
+import { Fragment, useContext} from "react";
 import { CategoriesContext } from "../../contexts/products.context";
 import CategoryPreview from "../../components/category-preview/category-preview.component";
 
@@ -9,7 +9,9 @@ const CategoriesPreview = () => {
       {Object.keys(categoriesMap).map(title => {
         const products = categoriesMap[title];
         
-        return <CategoryPreview title={title} products={products} />
+        return (
+            <CategoryPreview title={title} products={products} key={title} />
+        )
       })
     }
     </Fragment>  
