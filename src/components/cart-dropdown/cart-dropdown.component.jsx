@@ -6,8 +6,7 @@ import { CartContext } from '../../contexts/cart.context';
 
 import CartItem from '../cart-item/cart-item.component';
 
-import './cart-dropdown.styles.scss';
-import { Routes } from 'react-router-dom';
+import { CartDropdownContainer, CartItems } from './cart-dropdown.styles';
 
 const CartDropdown = () => {
   const { cartItems } = useContext(CartContext);
@@ -18,12 +17,12 @@ const CartDropdown = () => {
   }
 
   return (
-  <div className='cart-dropdown-container'>
-    <div className='cart-items'>
+  <CartDropdownContainer>
+    <CartItems className='cart-items'>
       {cartItems.map(item => <CartItem cartItem={item} key={item.id}/>)}
-    </div>
+    </CartItems>
       <Button onClick={goToCheckoutHandler}>Go to checkout</Button>    
-  </div>
+  </CartDropdownContainer>
   )
 
 }
