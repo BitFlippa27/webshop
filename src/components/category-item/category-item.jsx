@@ -1,17 +1,15 @@
-import "./category-item.styles.scss";
+import { BackgroundImage, Body, CategoryItemContainer } from "./category-item.styles.jsx";
 
 const CategoryItem = ({ category: {title, imageUrl} }) => {
   return (
-    <div className="category-item-container">
+    <CategoryItemContainer>
         {/*<img/>*/}
-        <div className="background-image" style={{
-          backgroundImage: `url(${ imageUrl })`  //Allows to use a String variable inside a String 
-        }}/>
-        <div className="category-item-body">
+        <BackgroundImage imageUrl={imageUrl}/>
+        <Body className="category-item-body">
           <h2>{title}</h2>
           <p>Shop now !</p>
-        </div>
-      </div>
+        </Body>
+      </CategoryItemContainer>
   )
 }
 

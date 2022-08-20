@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { ReactComponent as ShoppingItem} from "../../assets/cart-icon.svg";
 
+export const ShoppingIcon = styled(ShoppingItem)`
+  width: 24px;
+  height: 24px;
+`
 
 export const CartIconContainer = styled.div`
   width: 40px;
@@ -11,10 +15,6 @@ export const CartIconContainer = styled.div`
   justify-content: center;
   cursor: pointer;
 
-  svg {
-    width: 24px;
-    height: 24px;
-  }
 `
 export const ItemCount = styled.span`
   position: absolute;
