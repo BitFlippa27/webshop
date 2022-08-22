@@ -29,19 +29,3 @@ export const CartItems = styled.div`
   overflow: scroll;
   
 `
-/*
-.cart-dropdown-container {
-  
-
-  .empty-message {
-   
-  }
-
-  .cart-items {
-    
-  }
-
-  button {
-    margin-top: auto;
-  }
-}*/
