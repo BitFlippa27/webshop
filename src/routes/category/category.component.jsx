@@ -1,12 +1,13 @@
 import { useContext, useState, useEffect, Fragment } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { CategoriesContext } from "../../contexts/categories.context";
+import { selectCategoriesMap } from "../../store/categories/category.selector";
 import ProductCard from "../../components/product-card/product-card.component";
 
 import { CategoryContainer, CategoryTitle } from "./category.styles";
 
 const Category = () => {
-  const { categoriesMap } = useContext(CategoriesContext);
+  const categoriesMap = useSelector(selectCategoriesMap)
   const { category } = useParams();
   const [products, setProducts] = useState(categoriesMap[category]); //safeguard - categoreisMap is  empty because we invoking categoreisMap (snychronously) before we fetch the data from the database (async)
 
