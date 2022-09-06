@@ -22,7 +22,6 @@ const Category = () => {
       {products && products.map(product => <ProductCard product={product} key={product.id}/>)}
       </CategoryContainer>
     </Fragment>
-   
   )
 }
 

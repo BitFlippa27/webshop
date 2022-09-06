@@ -8,6 +8,7 @@ import { setCategories } from "../../store/categories/category.action";
 
 const Shop = () => {
   const dispatch = useDispatch();
+  console.log("SHOP")
 
   useEffect(() => {
     const getCategories = async () => {
