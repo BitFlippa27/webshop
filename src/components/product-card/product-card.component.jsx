@@ -1,6 +1,3 @@
-import { useContext } from "react";
-import { CartContext } from "../../contexts/cart.context";
-
 import Button from "../button/button.component";
 
 import { useDispatch, useSelector } from "react-redux";
