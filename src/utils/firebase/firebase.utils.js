@@ -93,7 +93,7 @@ export const createUserDocumentFromAuth = async (user, additionalInfo = {}) => {
     }
   }
 
-  return userDocRef;
+  return userSnapshot;
 
 }
 
@@ -116,3 +116,17 @@ export const logOutUser = async () => await signOut(auth);
 //runs the callback whenever the auth state changes
 export const onAuthStateChangedListener = (callback) => 
   onAuthStateChanged(auth, callback);
+  
+//checking if user state has changed
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = onAuthStateChanged(
+      auth,
+      (userAuth) => {
+        unsubscribe();
+        resolve(userAuth);
+      },
+      reject
+    )
+  });
+}
