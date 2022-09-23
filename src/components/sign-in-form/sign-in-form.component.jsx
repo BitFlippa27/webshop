@@ -2,9 +2,9 @@ import { useState, useContext } from "react";
 import { useDispatch } from "react-redux";
 import { googleSignInStart, emailSignInStart } from "../../store/user/user.action";
 import FormInput from "../form-input/form-input.component";
-import Button from "../button/button.component";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 
-import { SignUpContainer, ButtonsContainer } from "./sign-in-form.styles";
+import { SignInContainer, ButtonsContainer } from "./sign-in-form.styles";
 const defaultFormFields = {
   email: "",
   password: "",
@@ -50,7 +50,7 @@ const SignInForm = () => {
   }
 
   return (
-    <SignUpContainer>
+    <SignInContainer>
       <h2>Already have an Account ?</h2>
       <span>Login with your email and password</span>
       <form onSubmit={handleSubmit}>
@@ -72,11 +72,11 @@ const SignInForm = () => {
         />
         <ButtonsContainer>
           <Button type="submit">Login</Button>
-          <Button type="button" buttonType="google" onClick={loginWithGoogle}>Google Login</Button>
+          <Button type="button" buttonType={BUTTON_TYPE_CLASSES.google} onClick={loginWithGoogle}>Google Login</Button>
         </ButtonsContainer>
         
       </form>
-    </SignUpContainer>
+    </SignInContainer>
   )
 }
 

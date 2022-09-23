@@ -91,7 +91,7 @@ const SignUpForm = () => {
           onChange={handleChange}
           required= {true}
         />
-        <Button buttonType="google" type="submit">Sign Up</Button>
+        <Button type="submit">Sign Up</Button>
       </form>
     </SignUpContainer>
   )
