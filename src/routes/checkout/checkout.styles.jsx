@@ -1,12 +1,21 @@
 import styled from "styled-components";
 
 export const CheckoutContainer = styled.div`
-  width: 50%;
+  width: 70%;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 50px auto 0;
+
+  @media screen and (max-width: 900px) {
+      font-size: 14px;
+      width: 80%
+    }
+
+    @media screen and (max-width: 500px) {
+      width: 90%;
+    }
 `
 
 export const CheckoutHeader = styled.div`
@@ -16,7 +25,13 @@ export const CheckoutHeader = styled.div`
   justify-content: space-between;
   border-bottom: 1px solid darkgrey;
 
-  
+  @media screen and (max-width: 800px) {
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 400px) {
+    font-size: 11px;
+  }
 `
 
 export const HeaderBlock = styled.div`
@@ -27,6 +42,12 @@ export const HeaderBlock = styled.div`
     width: 8%;
   }
 
+  @media screen and (max-width: 800px) {
+    width: 22%;
+    &:last-child {
+      width: 12%;
+    }
+  }
 `
 
 export const TotalPrice = styled.span`
