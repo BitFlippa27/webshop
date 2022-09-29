@@ -11,11 +11,12 @@ export const CheckoutItemContainer = styled.div`
  
   @media screen and (max-width: 800px) {
     gap: 20px;
+    min-height: 200px;
   }
 
   @media screen and (max-width: 500px) {
-    font-size: 13px;
     font-weight: bold;
+    font-size: 17px;
   }
 `
 
@@ -27,6 +28,10 @@ export const ImageContainer = styled.div`
     width: 100%;
     height: 100%;
   }
+
+  @media screen and (max-width: 800px) {
+    width: 50%;
+  }
 `
 
 
@@ -36,6 +41,7 @@ export const BaseSpan = styled.span`
 
 export const Quantity = styled(BaseSpan)`
   display: flex;
+  
 `
 
 export const Arrow = styled.div`

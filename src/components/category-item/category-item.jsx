@@ -9,7 +9,7 @@ const CategoryItem = ({ category: {title, imageUrl, route} }) => {
     <CategoryItemContainer onClick={onNavigateHandler}>
         {/*<img/>*/}
         <BackgroundImage imageUrl={imageUrl}/>
-        <Body className="category-item-body">
+        <Body>
           <h2>{title}</h2>
           <p>Shop now !</p>
         </Body>
