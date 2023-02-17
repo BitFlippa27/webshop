@@ -15,8 +15,8 @@ export const CheckoutItemContainer = styled.div`
   }
 
   @media screen and (max-width: 500px) {
+    font-size: 13px;
     font-weight: bold;
-    font-size: 17px;
   }
 `
 
@@ -30,13 +30,14 @@ export const ImageContainer = styled.div`
   }
 
   @media screen and (max-width: 800px) {
-    width: 50%;
+    width: 40%;
   }
 `
 
 
 export const BaseSpan = styled.span`
   width: 23%;
+  
 `
 
 export const Quantity = styled(BaseSpan)`
