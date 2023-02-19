@@ -60,6 +60,8 @@ export function* isUserAuthenticated() {
     const userAuth = yield call(getCurrentUser);
     if (!userAuth) return;
     yield call(getSnapshotFromUserAuth, userAuth);
+    return userAuth;
+    
   } catch (error) {
     yield put(signInFailed(error));
   }

@@ -8,18 +8,22 @@ import { CATEGORIES_ACTION_TYPES } from "./category.types"
 
 function* fetchCategoriesAsync() {
   try {
+    //as async await
     const categoriesArray = yield call(getCategoriesAndDocs, "categories");
     yield put(fetchCategoriesSuccess(categoriesArray));
   } 
   catch (error) {
+    //as dispatch
     yield put((fetchCategoriesFailed(error)));
   }
 }
 
 export function* onFetchCategories() {
-  yield takeLatest(CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START, fetchCategoriesAsync);
+  //takes just the latest action if multiple same actions happened before and cancels previous ones
+  yield takeLatest(CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_START, fetchCategoriesAsync); 
 }
 
 export function* categoriesSaga() {
+  //Saga aggregator listens to sagas
   yield all([call(onFetchCategories)]);
 }
