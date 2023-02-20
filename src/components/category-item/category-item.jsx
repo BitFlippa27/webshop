@@ -3,8 +3,8 @@ import { BackgroundImage, Body, CategoryItemContainer } from "./category-item.st
 
 const CategoryItem = ({ category: {title, imageUrl, route} }) => {
   const navigate = useNavigate();
-
   const onNavigateHandler = () => navigate(route);
+  
   return (
     <CategoryItemContainer onClick={onNavigateHandler}>
         {/*<img/>*/}

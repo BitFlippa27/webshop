@@ -1,6 +1,7 @@
 import "./category-list.styles.jsx";
 import CategoryItem from "../category-item/category-item";
 import { CategoryListContainer } from "./category-list.styles.jsx";
+
 const categories = [
   {
     id: 1,
@@ -36,7 +37,6 @@ const categories = [
 
 const CategoryList = () => {
   
-
   return (
     <CategoryListContainer>
       {categories.map((category) => (

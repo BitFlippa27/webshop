@@ -12,16 +12,10 @@ import { selectCurrentUser } from "./store/user/user.selector";
 
 const App = () => {
   const dispatch  = useDispatch();
-  const currentUser = useSelector(selectCurrentUser);
-  
+
   useEffect(() => {
     dispatch(checkUserSession());
   }, [])
-
-  if(currentUser) {
-    console.log(currentUser)
-    redirect("/home");
-  }
 
   return (
     <div>
@@ -35,8 +29,6 @@ const App = () => {
           </Route>
       </Routes>
     </div>
-    
-    
   ) 
 }
 

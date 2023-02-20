@@ -1,0 +1,2 @@
+- category-item load image locally
+- user redirect
