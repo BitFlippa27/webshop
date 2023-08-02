@@ -1,8 +1,7 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Fragment } from "react";
 import { ReactComponent as Logo } from "../../assets/logo.svg"
-import { logOutUser } from "../../utils/firebase/firebase.utils.js";
 import { selectCurrentUser } from "../../store/user/user.selector";
 import { selectIsCartOpen } from "../../store/cart/cart.selector"; 
 import { signOutStart } from "../../store/user/user.action";

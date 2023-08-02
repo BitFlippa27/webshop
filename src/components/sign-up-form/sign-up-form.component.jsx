@@ -60,7 +60,7 @@ const SignUpForm = () => {
       <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput 
-          label="Display Name"
+            label="Display Name"
             type="text" 
             name="displayName"
             value={displayName}
