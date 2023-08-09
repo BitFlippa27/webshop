@@ -17,7 +17,7 @@ export const fetchCategoriesSuccess = (categoriesArray) =>
 export const fetchCategoriesFailed = (error) =>
   createAction(CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_FAILED, error);
 
-//Async wording recommended by redux
+//Async naming recommended by redux
 export const fetchCategoriesAsync = () => async (dispatch) => {
   dispatch(fetchCategoriesStart());
 
@@ -27,6 +27,4 @@ export const fetchCategoriesAsync = () => async (dispatch) => {
   } catch (error) {
     dispatch(fetchCategoriesFailed(error));
   }
-  
-
 }
