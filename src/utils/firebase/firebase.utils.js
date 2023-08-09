@@ -63,6 +63,8 @@ export const getCategoriesAndDocs = async () => {
   const collectionRef = collection(db, "categories");
   const q = query(collectionRef);
 
+  //await Promise.reject(new Error("Fokin fake Test Error"));
+
   const querySnapshot = await getDocs(q);
   //convert Object to Map
   return querySnapshot.docs.map(docSnapshot => docSnapshot.data());
