@@ -115,7 +115,7 @@ export const logOutUser = async () => await signOut(auth);
 
 //runs the callback whenever the auth state changes
 export const onAuthStateChangedListener = (callback) => 
-  onAuthStateChanged(auth, callback);  //returns a listener
+  onAuthStateChanged(auth, callback);  //create a Listener using this call back -> returns a listener
 
   
 //checking if user state has changed
