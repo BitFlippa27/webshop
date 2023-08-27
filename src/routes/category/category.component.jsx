@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect, Fragment } from "react";
+import { Routes, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { selectCategoriesMap, selectCategoriesIsLoading } from "../../store/categories/category.selector";
@@ -8,10 +9,13 @@ import Spinner from "../../components/spinner/spinner.component";
 import { CategoryContainer, CategoryTitle } from "./category.styles";
 
 const Category = () => {
-  const categoriesMap = useSelector(selectCategoriesMap)
+  const categoriesMap = useSelector(selectCategoriesMap);
+  console.log(categoriesMap);
   const isLoading = useSelector(selectCategoriesIsLoading);
   const { category } = useParams();
   const [products, setProducts] = useState(categoriesMap[category]); //safeguard - categoreisMap is  empty because we invoking categoreisMap (snychronously) before we fetch the data from the database (async)
+
+ 
 
   useEffect(() => {
     setProducts(categoriesMap[category]);
@@ -28,7 +32,7 @@ const Category = () => {
           </CategoryContainer>
         )}
     </Fragment>
-  )
+  );
 }
 
 export default Category;

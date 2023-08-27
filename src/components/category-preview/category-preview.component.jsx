@@ -13,7 +13,7 @@ const CategoryPreview = ({ title, products }) => {
       <Preview>
         {
           products
-          .filter((_, i) => i < 4 )
+          .filter((_, i) => i < 4 ) //filter all items but not the first 4, (_) dont use callback
           .map(product => <ProductCard product={product} key={product.id}/>)
         }
       </Preview>
