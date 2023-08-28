@@ -1,6 +1,5 @@
-import { useContext, useState, useEffect, Fragment } from "react";
-import { Routes, Route } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useState, useEffect, Fragment } from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { selectCategoriesMap, selectCategoriesIsLoading } from "../../store/categories/category.selector";
 import ProductCard from "../../components/product-card/product-card.component";
@@ -10,10 +9,10 @@ import { CategoryContainer, CategoryTitle } from "./category.styles";
 
 const Category = () => {
   const categoriesMap = useSelector(selectCategoriesMap);
-  console.log(categoriesMap);
+  console.log("render/re-rednering category component");
   const isLoading = useSelector(selectCategoriesIsLoading);
   const { category } = useParams();
-  const [products, setProducts] = useState(categoriesMap[category]); //safeguard - categoreisMap is  empty because we invoking categoreisMap (snychronously) before we fetch the data from the database (async)
+  const [products, setProducts] = useState(categoriesMap[category]); //safeguard - categoreisMap is  empty because we invoke categoriesMap snychronously (useEffect)  before we fetch the data from the database (async)
 
  
 

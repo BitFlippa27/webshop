@@ -7,13 +7,13 @@ const CategoryItem = ({ category: {title, imageUrl, route} }) => {
   
   return (
     <CategoryItemContainer onClick={onNavigateHandler}>
-        {/*<img/>*/}
-        <BackgroundImage imageUrl={imageUrl}/>
-        <Body>
-          <h2>{title}</h2>
-          <p>Shop now !</p>
-        </Body>
-      </CategoryItemContainer>
+      {/*<img/>*/}
+      <BackgroundImage imageUrl={imageUrl}/>
+      <Body>
+        <h2>{title}</h2>
+        <p>Shop now !</p>
+      </Body>
+    </CategoryItemContainer>
   )
 }
 

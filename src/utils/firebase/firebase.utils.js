@@ -66,7 +66,7 @@ export const getCategoriesAndDocs = async () => {
   //await Promise.reject(new Error("new Error wooooopsi"));
 
   const querySnapshot = await getDocs(q);
-  //convert Object to Map
+  //convert raw Object to Array of category objects [{items: [], title: "hats", imageUrl: "http"},{...}, ...]
   return querySnapshot.docs.map(docSnapshot => docSnapshot.data());
 }
 
