@@ -1,3 +1,4 @@
 - category-item load image locally
 - user redirect
 - useParams possible Vulnerability ?! explicit just "hats, sneakers, womens, mens"
+- css style clash when on tablets (add to cart button)
