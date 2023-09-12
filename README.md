@@ -6,7 +6,7 @@ The app has different versions replicated as branches. I  started to implement s
 
 Right now the entire code is migrating to TypeScript. 
 
-## Teckstack:
+## Teckstack
 - React.js
 - Sass
 - Styled Components
