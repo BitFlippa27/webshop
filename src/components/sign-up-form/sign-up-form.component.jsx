@@ -6,6 +6,7 @@ import Button from "../button/button.component";
 
 import { SignUpContainer } from "./sign-up-form.styles";
 import { signUpStart } from "../../store/user/user.action";
+import { AuthLink, H2Title } from "../../routes/authentication/authentication.styles";
 
 const defaultFormFields = {
   displayName: "",
@@ -14,7 +15,7 @@ const defaultFormFields = {
   confirmPassword: ""
 }
 
-const SignUpForm = () => {
+const SignUpForm = ({ setSignupView }) => {
   const [formFields, setFormFields] = useState(defaultFormFields); 
   const { displayName, email, password, confirmPassword } = formFields;
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ const SignUpForm = () => {
     setFormFields({...formFields, [name]: value});
   }
 
+
   return (
     <SignUpContainer>
       <h2>Dont have an Account ?</h2>
@@ -91,8 +93,12 @@ const SignUpForm = () => {
           onChange={handleChange}
           required= {true}
         />
-        <Button type="submit">Sign Up</Button>
+        <Button type="submit">Register</Button>
       </form>
+      <H2Title>Already have an account ?</H2Title> 
+      <AuthLink onClick={() => setSignupView(false)}>
+        Login
+      </AuthLink>
     </SignUpContainer>
   )
 }

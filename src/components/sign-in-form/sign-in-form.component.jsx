@@ -5,12 +5,14 @@ import FormInput from "../form-input/form-input.component";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 
 import { SignInContainer, ButtonsContainer } from "./sign-in-form.styles";
+import { AuthLink, H2Title } from "../../routes/authentication/authentication.styles";
+
 const defaultFormFields = {
   email: "",
   password: "",
 }
 
-const SignInForm = () => {
+const SignInForm = ({ setSignupView }) => {
   const [formFields, setFormFields] = useState(defaultFormFields); 
   const { email, password } = formFields;
   const dispatch = useDispatch();
@@ -49,6 +51,8 @@ const SignInForm = () => {
     setFormFields({...formFields, [name]: value});
   }
 
+
+
   return (
     <SignInContainer>
       <h2>Already have an Account ?</h2>
@@ -74,7 +78,10 @@ const SignInForm = () => {
           <Button type="submit">Login</Button>
           <Button type="button" buttonType={BUTTON_TYPE_CLASSES.google} onClick={loginWithGoogle}>Google Login</Button>
         </ButtonsContainer>
-        
+        <H2Title>You don't have an account ?</H2Title>
+        <AuthLink onClick={() => setSignupView(true)}>
+          Register
+        </AuthLink>
       </form>
     </SignInContainer>
   )
